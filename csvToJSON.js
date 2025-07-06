@@ -3,7 +3,7 @@ import csv from 'csv-parser';
 
 const results = [];
 
-let csvFilePath = "/Users/jtubert/Desktop/dev-projects/_personal/astro-jtubert.github.io/src/data/stories.csv";
+let csvFilePath = "/Users/jtubert/Desktop/dev-projects/_personal/astro/src/data/stories.csv";
 
 fs.createReadStream(csvFilePath)
   .pipe(csv())
