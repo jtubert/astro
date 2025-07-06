@@ -1,0 +1,34 @@
+---
+// Import stories from a local JSON or JS file
+import stories from '../data/stories.json';
+import Layout from '../layouts/Layout.astro'
+
+// Astro page metadata
+export const prerender = true;
+export const title = "jtubert.com";
+export const layout = "../layouts/Layout.astro";
+---
+
+<Layout>
+{stories.map(async (story) => {
+  const autoAdvance = story.type === "video" ? "hgajlbldbp" : "5000ms";
+
+  // Dynamically import the correct template component
+  const Template = await import(`../components/templates/${story.template}.astro`);
+
+  return (
+    <Template.default 
+      id={story.id}
+      category={story.category}
+      title={story.title}
+      date={story.date}
+      link={story.link}
+      asset={story.asset}
+      type={story.type}
+      autoAdvance={autoAdvance}
+      template={story.template}
+      poster={story.poster}
+    />
+  );
+})}
+</Layout>

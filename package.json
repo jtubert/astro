@@ -1,0 +1,23 @@
+{
+  "name": "",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "host": "astro dev --host",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "deploy": "git add . && git commit -m \"deploying on $(date '+%Y-%m-%d %H:%M:%S')\" && git push",
+    "download": "sh script.sh",
+    "csvToJSON": "node csvToJSON.js",
+    "generate_thumbs": "sh ffmpeg.sh",
+    "download_and_deploy": "npm run download_and_convert && npm run generate_thumbs && npm run deploy",
+    "download_and_convert": "npm run download && npm run csvToJSON"
+  },
+  "dependencies": {
+    "astro": "^5.10.2",
+    "astro-compress": "^2.3.8",
+    "csv-parser": "^3.2.0"
+  }
+}

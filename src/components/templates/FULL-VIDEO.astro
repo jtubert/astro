@@ -1,0 +1,13 @@
+---
+const { link, asset, type, id, autoAdvance, category, title, date } = Astro.props;
+---
+<amp-story-page id={ id } class=`${id} ms-st-pg` auto-advance-after={ autoAdvance }>
+
+  <amp-story-grid-layer template="fill">
+          <amp-video autoplay loop layout="responsive" width="720" height="1280" poster="" id="hgajlbldbp" muted>
+            <source src={ asset } type="video/mp4">
+          </amp-video>
+  </amp-story-grid-layer>
+
+  
+</amp-story-page>

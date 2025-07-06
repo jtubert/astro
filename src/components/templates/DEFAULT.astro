@@ -1,0 +1,74 @@
+---
+const { link, poster, asset, type, id, autoAdvance, category, title, date } = Astro.props;
+const showLink = link && link !== "N/A" && link !== "";
+---
+
+<amp-story-page id={ id } class="hagvvhkhio ms-st-pg" auto-advance-after={ autoAdvance }>
+  <amp-story-grid-layer template="vertical" id="omdgq" class="scrim">
+    <div class="letterbox">
+      <div class="nzaxq pa nzaxq-a">
+        <h5 class="nljkx pa">{ category }</h5>
+        <h2 class="sttpq pa">{ title }</h2>
+      </div>
+      <h6 class="foqgw pa foqgw-a">{ date }</h6>
+      
+      {showLink && (
+        <span class="pmkku pa">
+          Click Here
+          <a
+            href={ link }
+            role="link"
+            data-tooltip-text="Click Here"
+            class="story-tooltip pa"
+            data-tooltip-icon="https://www.google.com/s2/favicons?domain={ link }"
+            data-vars-ctalink="{ link }">
+          </a>
+        </span>
+      )}
+
+      {(() => {
+        if (type === "image") {
+          return (
+            <>
+              <div class="pxout pa">
+                <amp-img
+                  width="919"
+                  height="684"
+                  layout="responsive"
+                  class="img-fill pa"
+                  src={ asset }
+                  alt={ id }
+                  id="hgajlbldbp">
+                </amp-img>
+              </div>
+            </>
+          );
+        } else {
+          return (
+            <>
+              <div class="video-wrapper">
+                <amp-video
+                  class="jpbkc pa"
+                  layout="intrinsic"
+                  width="640"
+                  height="360"
+                  poster={ poster }
+                  autoplay
+                  alt={ id }
+                  id="hgajlbldbp">
+                  <source src={ asset } type="video/mp4">
+                </amp-video>
+              </div>
+            </>
+          );
+        }
+      })()}
+    </div>
+  </amp-story-grid-layer>
+
+  <amp-story-animation layout="nodisplay" trigger="visibility">
+    <script type="application/json">
+      [{"selector":".nzaxq-a","duration":"500ms","fill":"forwards","delay":"0ms","keyframes":[{"offset":0,"opacity":0,"visibility":"visible"},{"offset":1,"opacity":"1","visibility":"visible"}]},{"selector":".foqgw-a","duration":"500ms","fill":"forwards","delay":"0ms","keyframes":[{"offset":0,"transform":"translateX(-332px)","opacity":"1","visibility":"visible"},{"offset":1,"transform":"translateX(0)","opacity":"1","visibility":"visible"}]}]
+  </script>
+  </amp-story-animation>
+</amp-story-page>
