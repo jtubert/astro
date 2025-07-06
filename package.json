@@ -8,7 +8,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "deploy": "git add . && git commit -m \"deploying on $(date '+%Y-%m-%d %H:%M:%S')\" && git push",
+    "deploy": "git add . && git commit -m \"deploying Astro site on $(date '+%Y-%m-%d %H:%M:%S')\" && git push",
     "download": "sh script.sh",
     "csvToJSON": "node csvToJSON.js",
     "generate_thumbs": "sh ffmpeg.sh",
